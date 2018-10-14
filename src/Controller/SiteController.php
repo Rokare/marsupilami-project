@@ -66,7 +66,7 @@ class SiteController extends AbstractController
                 $username = $_POST['username'];
                 $queryBuilder = $em->getRepository(User::class)->createQueryBuilder('us')
                     ->andWhere('us.username LIKE :searchTerm')
-                    ->setParameter('searchTerm', '%'.$username.'%');
+                    ->setParameter('searchTerm', $username.'%');
                 $resultats = $queryBuilder->getQuery()->getResult();
 
 
