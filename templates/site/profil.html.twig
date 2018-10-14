@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+
+{%  block body %}
+    <br>
+    <div class="container">
+        <div class="card">
+            <h4 class="card-header">Profile</h4>
+            <div class="card-body">
+                <h5 class="card-title">Login : {{ app.user.username }}</h5>
+                <h5 class="card-title">Email : {{ app.user.email }}</h5>
+                <h5 class="card-title">Race : {{ app.user.race }}</h5>
+                <h5 class="card-title">Famille : {{ app.user.famille }}</h5>
+                <h5 class="card-title">Taille : {{ app.user.taille }} cm </h5>
+                <h5 class="card-title">Age : {{  app.user.age | age }} ans </h5>
+                <a type="submit" href="{{  path('fos_user_profile_edit') }}" class="btn btn-success">Editer</a>
+            </div>
+
+        </div>
+    </div>
+{%  endblock %}
+
+

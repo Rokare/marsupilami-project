@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <form action="" method="post">
+    {{ form_start(form) }}
+    <br><h1>Inscription</h1><br>
+        {{ form_row(form.username,{'label':'Login','attr':{'placeholder':'login'}}) }}
+    {{ form_row(form.password,{'label':'Mot de passe','attr':{'placeholder':'mot de passe'}}) }}
+    {{ form_row(form.email,{'label':'Email','attr':{'placeholder':'votre email'}}) }}
+    {{ form_row(form.age,{'label':'Date de naissance','attr':{'placeholder':'date de naissance'}}) }}
+    <button type="submit" name="submit" class="btn btn-primary">S'inscrire</button>
+    {{ form_end(form) }}
+    </form>
+
+{% endblock %}

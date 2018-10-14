@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+
+{%  block body %}
+
+    <br><h4 class="card-header">Amis</h4><br>
+
+    {% for ami in amis %}
+
+            <div class="container">
+                <div class="card">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Login : {{ ami.username }}</h5>
+                        <h5 class="card-title">Email : {{ ami.email}}</h5>
+                        <h5 class="card-title">Race : {{ ami.race }}</h5>
+                        <h5 class="card-title">Famille : {{ ami.famille }}</h5>
+                        <h5 class="card-title">Taille : {{ ami.taille }} cm </h5>
+                        <h5 class="card-title">Age : {{  ami.age | age }} ans </h5>
+                        <form action="" method="post">
+                            <input  type='hidden' name="ida" value="{{ ami.id }}">
+                            <input type="hidden" name="idu" value="{{ app.user.id }}">
+                            <button type="submit" class="btn btn-danger">Supprimer de vos amis</button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+    {% endfor %}
+
+{% endblock %}
